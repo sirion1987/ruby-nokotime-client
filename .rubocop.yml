@@ -1,0 +1,56 @@
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - "bin/**/*"
+    - ".bundle/**/*"
+    - "bundle/**/*"
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+Layout/DotPosition:
+  EnforcedStyle: trailing
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - context
+    - describe
+    - feature
+    - shared_examples
+    - shared_examples_for
+    - namespace
+    - draw
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Lambda:
+  EnforcedStyle: literal
+Style/NegatedIf:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/SymbolArray:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/*
+    - spec/features/**/*
+RSpec/LetSetup:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Exclude:
+    - spec/features/**/*
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/NotToNot:
+  Enabled: false
