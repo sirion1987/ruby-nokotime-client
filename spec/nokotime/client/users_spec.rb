@@ -29,8 +29,6 @@ RSpec.describe Nokotime::Client::Users do
         }
       end
 
-      let(:result) { client.all }
-
       it "raises a invalid params error" do
         expect do
           result
@@ -46,8 +44,6 @@ RSpec.describe Nokotime::Client::Users do
           email: "invalid_email"
         }
       end
-
-      let(:result) { client.all }
 
       it "raises a invalid params error" do
         expect do
@@ -82,8 +78,6 @@ RSpec.describe Nokotime::Client::Users do
           role: "invalid_state"
         }
       end
-
-      let(:result) { client.all }
 
       it "raises a invalid params error" do
         expect do
