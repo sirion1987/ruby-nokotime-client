@@ -1,4 +1,9 @@
+require "dry-validation"
+
 require "nokotime/configuration"
+require "nokotime/validator/restricted_hash"
+require "nokotime/validator/user"
+require "nokotime/client/users"
 
 module Nokotime
   module_function
