@@ -18,7 +18,7 @@ RSpec.describe Nokotime::Client::Users do
       end
 
       it "success" do
-        expect{ result }.not_to raise_error
+        expect { result }.not_to raise_error
       end
     end
 

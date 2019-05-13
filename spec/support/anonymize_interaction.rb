@@ -7,16 +7,20 @@ class AnonymizeInteraction
   PATH_TO_CLASS = [
     {
       path: %r{^\/v2\/users(\/\d+)?$},
-      klass: "Anonymize::Users"},
+      klass: "Anonymize::Users"
+    },
     {
       path: %r{^\/v2\/projects(\/\d+)?$},
-      klass: "Anonymize::Projects"},
+      klass: "Anonymize::Projects"
+    },
     {
       path: %r{^\/v2\/entries(\/\d+)?$},
-      klass: "Anonymize::Entries"},
+      klass: "Anonymize::Entries"
+    },
     {
       path: %r{^\/v2\/tags(\/\d+)?$},
-      klass: "Anonymize::Tags"},
+      klass: "Anonymize::Tags"
+    },
     {
       path: %r{^\/v2\/project_groups(\/\d+)?$},
       klass: "Anonymize::ProjectGroups"

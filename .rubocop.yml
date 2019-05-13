@@ -28,10 +28,14 @@ Style/ClassAndModuleChildren:
   EnforcedStyle: nested
 Style/Documentation:
   Enabled: false
+Style/EmptyMethod:
+  EnforcedStyle: expanded
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/Lambda:
   EnforcedStyle: literal
+Style/ModuleFunction:
+  EnforcedStyle: module_function
 Style/NegatedIf:
   Enabled: false
 Style/PercentLiteralDelimiters:
@@ -48,6 +52,7 @@ RSpec/DescribeClass:
 RSpec/LetSetup:
   Enabled: false
 RSpec/MultipleExpectations:
+  Max: 2
   Exclude:
     - spec/features/**/*
 RSpec/NamedSubject:

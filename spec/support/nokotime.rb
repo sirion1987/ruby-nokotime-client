@@ -1,5 +1,5 @@
 RSpec.configure do |config|
-  config.before(:each) do
+  config.before do
     Nokotime.configure do |c|
       c.token = ENV["NOKOTIME_TOKEN"]
       c.auth_type = :noko_token
@@ -7,7 +7,7 @@ RSpec.configure do |config|
     end
   end
 
-  config.after(:each) do
+  config.after do
     Nokotime.reset
   end
 end

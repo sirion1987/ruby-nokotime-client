@@ -50,15 +50,12 @@ RSpec.describe Nokotime::Connection, :vcr do
     let(:params) { {} }
 
     it "raises a resource not found error for invalid resource" do
-      expect do
-        response
-      end.to raise_error(Nokotime::Connection::Errors::ResourceNotFound)
+      expect { response }.
+        to raise_error(Nokotime::Connection::Errors::ResourceNotFound)
     end
 
     it "returns status code" do
-      expect do
-        response
-      end.to raise_error do |error|
+      expect { response }.to raise_error do |error|
         expect(error.cause.response[:status]).to eq(404)
       end
     end
@@ -71,9 +68,8 @@ RSpec.describe Nokotime::Connection, :vcr do
       end
 
       it "raises a connection failed exception" do
-        expect do
-          response
-        end.to raise_error(Nokotime::Connection::Errors::ConnectionFailed)
+        expect { response }.
+          to raise_error(Nokotime::Connection::Errors::ConnectionFailed)
       end
     end
 
@@ -85,9 +81,8 @@ RSpec.describe Nokotime::Connection, :vcr do
       end
 
       it "raises a client error exception" do
-        expect do
-          response
-        end.to raise_error(Nokotime::Connection::Errors::ClientError)
+        expect { response }.
+          to raise_error(Nokotime::Connection::Errors::ClientError)
       end
     end
 

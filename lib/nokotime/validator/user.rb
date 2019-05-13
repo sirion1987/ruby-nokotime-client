@@ -2,7 +2,7 @@ module Nokotime
   module Validator
     class User
       UserSchema = Dry::Validation.Schema do
-        EMAIL_REGEX = /\A[^@\s]+@[^@\s]+\z/
+        EMAIL_REGEX = /\A[^@\s]+@[^@\s]+\z/.freeze
 
         configure do
           config.namespace = :user

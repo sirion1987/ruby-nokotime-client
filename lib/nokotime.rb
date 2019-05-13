@@ -13,18 +13,17 @@ require "nokotime/validator/user"
 require "nokotime/client/users"
 
 module Nokotime
-  def configure(&block)
+  module_function
+
+  def configure(&_block)
     yield configuration
   end
-  module_function :configure
 
   def configuration
     @configuration || reset
   end
-  module_function :configuration
 
   def reset
     @configuration = Configuration.new
   end
-  module_function :reset
 end
