@@ -1,8 +1,5 @@
 require "simplecov"
-require "bundler/setup"
-require "nokotime"
-
-Dir["./spec/support/**/*.rb"].sort.each { |file| require file }
+require "simplecov-console"
 
 SimpleCov.start do
   add_filter "/vendor/"
@@ -10,6 +7,14 @@ SimpleCov.start do
   add_filter ".bundle/"
   add_filter "/spec/"
 end
+
+require "bundler/setup"
+require "dotenv"
+require "nokotime"
+
+Dir["./spec/support/**/*.rb"].sort.each { |file| require file }
+
+Dotenv.load(".env.test")
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|
