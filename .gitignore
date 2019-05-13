@@ -14,3 +14,7 @@
 !.env.*.sample
 .env.*
 .env
+
+# rubocop
+
+.rubocop-https---*
