@@ -1,8 +1,8 @@
 RSpec.configure do |config|
   config.before(:each) do
     Nokotime.configure do |c|
-      c.token = "valid_token"
-      c.auth_type = :freckle_token
+      c.token = ENV["NOKOTIME_TOKEN"]
+      c.auth_type = :noko_token
       c.max_concurrency = 5
     end
   end
