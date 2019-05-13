@@ -2,7 +2,7 @@ require "spec_helper"
 
 RSpec.describe Nokotime::Configuration do
   describe "with configuration" do
-    let(:auth_type) { :token }
+    let(:auth_type) { :noko_token }
     let(:max_concurrency) { 2 }
     let(:token) { "fake_token" }
     let(:url) { "http://foobar.com" }
@@ -62,6 +62,21 @@ RSpec.describe Nokotime::Configuration do
       expect(Nokotime.configuration.url).to(
         eq(Nokotime::Configuration::DEFAULT_URL)
       )
+    end
+  end
+
+  describe "with wrong configuration" do
+    before do
+      Nokotime.reset
+      Nokotime.configure do |config|
+        config.auth_type = :wrong_auth_type
+      end
+    end
+
+    it "raises a configuration error for authentication type" do
+      expect do
+        Nokotime.configuration.auth_type
+      end.to raise_error(Nokotime::Errors::Configuration)
     end
   end
 end
