@@ -70,7 +70,7 @@ RSpec.describe Nokotime::Client::Users, :vcr do
     describe "with wrong user id" do
       let(:fake_id) { 0 }
 
-      it "raises a invalid params error" do
+      it "raises a resource not found error" do
         expect { result }.to(
           raise_error(Nokotime::Connection::Errors::ResourceNotFound)
         )
