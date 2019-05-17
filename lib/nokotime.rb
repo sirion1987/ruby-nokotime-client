@@ -9,7 +9,7 @@ require "nokotime/paginator"
 require "nokotime/request/single_page"
 require "nokotime/request/multiple_pages"
 require "nokotime/validator/restricted_hash"
-require "nokotime/validator/user"
+require "nokotime/validator/user_schema"
 require "nokotime/client/users"
 
 module Nokotime

@@ -38,7 +38,7 @@ module Nokotime
       end
 
       def validation
-        @validation ||= Validator::User::UserSchema.call(params)
+        @validation ||= Validator::UserSchema.validate(params)
       end
     end
   end

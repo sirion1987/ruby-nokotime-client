@@ -1,7 +1,7 @@
 module Nokotime
   module Validator
-    class User
-      UserSchema = Dry::Validation.Schema do
+    module UserSchema
+      USER_SCHEMA = Dry::Validation.Schema do
         EMAIL_REGEX = /\A[^@\s]+@[^@\s]+\z/.freeze
 
         configure do
@@ -31,6 +31,10 @@ module Nokotime
           optional(:state).value(included_in?: valid_states)
           optional(:per_page).filled :int?
         end
+      end
+
+      def self.validate(attributes)
+        USER_SCHEMA.(attributes)
       end
     end
   end
