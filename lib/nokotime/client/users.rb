@@ -14,16 +14,25 @@ module Nokotime
       end
 
       def all
-        user_params
+        multiple_pages.get(ENDPOINT, params: user_params)
       end
 
       def show(id)
+        single_page.get("#{ENDPOINT}/#{id}")
       end
 
       private
 
+      def multiple_pages
+        @multiple_pages ||= Request::MultiplePages.new
+      end
+
+      def single_page
+        @single_page ||= Request::SinglePage.new
+      end
+
       def user_params
-        return if validation.success?
+        return params if validation.success?
 
         raise Errors::InvalidParams, validation.messages
       end
