@@ -12,6 +12,7 @@ require "nokotime/validator/restricted_hash"
 require "nokotime/validator/user_schema"
 require "nokotime/validator/entry_schema"
 require "nokotime/client/users"
+require "nokotime/client/entries"
 
 module Nokotime
   module_function
