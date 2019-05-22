@@ -34,7 +34,7 @@ module Nokotime
       end
 
       def self.validate(attributes)
-        USER_SCHEMA.(attributes)
+        USER_SCHEMA.call(attributes)
       end
     end
   end

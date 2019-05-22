@@ -1,5 +1,4 @@
 module Nokotime
-  # rubocop:disable Metrics/ModuleLength
   module Validator
     # rubocop:disable Metrics/BlockLength
     module EntrySchema
@@ -68,9 +67,8 @@ module Nokotime
       # rubocop:enable Metrics/BlockLength
 
       def self.validate(attributes)
-        ENTRY_SCHEMA.(attributes)
+        ENTRY_SCHEMA.call(attributes)
       end
     end
-    # rubocop:enable Metrics/ModuleLength
   end
 end

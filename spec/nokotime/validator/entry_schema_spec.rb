@@ -1,6 +1,7 @@
 require "spec_helper"
 
 module Nokotime
+  # rubocop:disable Metrics/ModuleLength
   module Validator
     RSpec.describe EntrySchema do
       subject(:validator) { described_class.validate(params) }
@@ -187,4 +188,5 @@ module Nokotime
       end
     end
   end
+  # rubocop:enable Metrics/ModuleLength
 end
