@@ -15,6 +15,7 @@ require "nokotime/validator/project_schema"
 require "nokotime/validator/tag_schema"
 require "nokotime/client/users"
 require "nokotime/client/entries"
+require "nokotime/client/projects"
 require "nokotime/client/tags"
 
 module Nokotime
