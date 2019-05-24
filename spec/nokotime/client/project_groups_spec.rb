@@ -38,7 +38,7 @@ RSpec.describe Nokotime::Client::ProjectGroups, :vcr do
 
       it "raises a invalid params error" do
         expect { result }.to(
-          raise_error(Nokotime::Client::ProjectGroups::Errors::InvalidParams)
+          raise_error(Nokotime::Errors::InvalidParams)
         )
       end
     end

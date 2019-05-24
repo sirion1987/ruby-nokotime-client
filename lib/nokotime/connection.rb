@@ -2,12 +2,6 @@ module Nokotime
   class Connection
     include Nokotime::Authentication
 
-    module Errors
-      class ConnectionFailed < StandardError; end
-      class ResourceNotFound < StandardError; end
-      class ClientError < StandardError; end
-    end
-
     # rubocop:disable Metrics/MethodLength
     def get(path, params: {}, request_options: {})
       response = connection.get do |request|

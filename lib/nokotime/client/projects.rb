@@ -1,10 +1,6 @@
 module Nokotime
   module Client
     class Projects
-      module Errors
-        class InvalidParams < StandardError; end
-      end
-
       ENDPOINT = "/v2/projects".freeze
 
       attr_reader :params

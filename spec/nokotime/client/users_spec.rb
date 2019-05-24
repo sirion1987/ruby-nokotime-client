@@ -46,7 +46,7 @@ RSpec.describe Nokotime::Client::Users, :vcr do
 
       it "raises a invalid params error" do
         expect { result }.to(
-          raise_error(Nokotime::Client::Users::Errors::InvalidParams)
+          raise_error(Nokotime::Errors::InvalidParams)
         )
       end
     end
@@ -72,7 +72,7 @@ RSpec.describe Nokotime::Client::Users, :vcr do
 
       it "raises a resource not found error" do
         expect { result }.to(
-          raise_error(Nokotime::Connection::Errors::ResourceNotFound)
+          raise_error(Nokotime::Errors::ResourceNotFound)
         )
       end
     end

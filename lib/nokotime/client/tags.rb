@@ -1,10 +1,6 @@
 module Nokotime
   module Client
     class Tags
-      module Errors
-        class InvalidParams < StandardError; end
-      end
-
       ENDPOINT = "/v2/tags".freeze
 
       attr_reader :params

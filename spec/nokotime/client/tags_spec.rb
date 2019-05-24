@@ -36,7 +36,7 @@ RSpec.describe Nokotime::Client::Tags, :vcr do
 
       it "raises a invalid params error" do
         expect { result }.to(
-          raise_error(Nokotime::Client::Tags::Errors::InvalidParams)
+          raise_error(Nokotime::Errors::InvalidParams)
         )
       end
     end
