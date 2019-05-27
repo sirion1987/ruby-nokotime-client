@@ -14,5 +14,8 @@ Style/EmptyMethod:
 Style/ModuleFunction:
   EnforcedStyle: module_function
 
+Metrics/BlockLength:
+  Max: 35
+
 RSpec/MultipleExpectations:
   Max: 2
