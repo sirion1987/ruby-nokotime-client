@@ -20,6 +20,8 @@ module Nokotime
     end
     # rubocop:enable Metrics/MethodLength
 
+    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/MethodLength
     def get_in_parallel(
       path,
       from_page_number,
@@ -40,7 +42,15 @@ module Nokotime
       end
 
       responses
+    rescue Faraday::ConnectionFailed => e
+      raise Errors::ConnectionFailed.new(e), e.message
+    rescue Faraday::ResourceNotFound => e
+      raise Errors::ResourceNotFound.new(e), e.message
+    rescue Faraday::ClientError => e
+      raise Errors::ClientError.new(e), e.message
     end
+    # rubocop:enable Metrics/MethodLength
+    # rubocop:enable Metrics/AbcSize
 
     private
 
