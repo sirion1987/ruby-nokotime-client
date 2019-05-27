@@ -9,7 +9,8 @@ module Nokotime
           predicates(RestrictedHash)
 
           def allowed_keys
-            %i(name
+            %i(
+              name
               project_group_ids
               billing_increment
               enabled
@@ -19,7 +20,7 @@ module Nokotime
           end
 
           def valid_increment
-              %w(1 5 6 10 15)
+            %w(1 5 6 10 15)
           end
 
           def valid_increment?(_options, values)
