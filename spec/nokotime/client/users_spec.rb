@@ -3,7 +3,7 @@ require "spec_helper"
 RSpec.describe Nokotime::Client::Users, :vcr do
   subject(:client) { described_class.new(params) }
 
-  let(:expected_user_keys) do
+  let(:expected_keys) do
     a_hash_including(
       "id",
       "email",
@@ -28,53 +28,19 @@ RSpec.describe Nokotime::Client::Users, :vcr do
   end
 
   describe "#all" do
-    let(:result) { client.all }
+    let(:responses) { client.all }
     let(:params) { {} }
 
-    it "returns a Request::MultiplePages" do
-      expect(result).to be_a(Nokotime::Request::MultiplePages)
-    end
-
-    it "returns a valid user" do
-      expect(result.last_responses.first.body.first).to(
-        match(expected_user_keys)
-      )
-    end
-
-    describe "with wrong params" do
-      let(:params) { {unknow_param: "invalid_param"} }
-
-      it "raises a invalid params error" do
-        expect { result }.to(
-          raise_error(Nokotime::Errors::InvalidParams)
-        )
-      end
-    end
+    it_behaves_like "a multiple pages"
+    it_behaves_like "an endpoint with valid parameters"
   end
 
   describe "#show" do
-    let(:result) { client.show(fake_id) }
-    let(:fake_id) { ENV["REAL_FRECKLE_USER_ID"] }
+    let(:response) { client.show(fake_id) }
+    let(:fake_id) { ENV["REAL_NOKOTIME_USER_ID"] }
     let(:params) { {} }
 
-    it "returns a Request::SinglePage" do
-      expect(result).to be_a(Nokotime::Request::SinglePage)
-    end
-
-    it "returns a valid user" do
-      expect(result.last_response.body).to(
-        match(expected_user_keys)
-      )
-    end
-
-    describe "with wrong user id" do
-      let(:fake_id) { 0 }
-
-      it "raises a resource not found error" do
-        expect { result }.to(
-          raise_error(Nokotime::Errors::ResourceNotFound)
-        )
-      end
-    end
+    it_behaves_like "a single page"
+    it_behaves_like "an endpoint with valid resource"
   end
 end
