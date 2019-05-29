@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 22 May 2019 05:25:31 GMT
+      - Wed, 29 May 2019 05:44:28 GMT
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
@@ -37,12 +37,12 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Runtime:
-      - '33'
+      - '30'
       Vary:
       - Origin
     body:
       encoding: UTF-8
       string: " "
     http_version: 
-  recorded_at: Wed, 22 May 2019 05:25:31 GMT
+  recorded_at: Wed, 29 May 2019 05:44:29 GMT
 recorded_with: VCR 4.0.0
