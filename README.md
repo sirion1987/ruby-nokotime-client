@@ -2,6 +2,10 @@
 
 Ruby client for [Noko](http://nokotime.com/) API.
 
+[![Build Status](https://travis-ci.com/sirion1987/nokotime-ruby-client.svg?branch=master)](https://travis-ci.com/sirion1987/nokotime-ruby-client)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f38ea8d9b42e6b2bc566/test_coverage)](https://codeclimate.com/github/sirion1987/nokotime-ruby-client/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f38ea8d9b42e6b2bc566/maintainability)](https://codeclimate.com/github/sirion1987/nokotime-ruby-client/maintainability)
+
 ## Installation
 
 Add this line to your application's Gemfile:
