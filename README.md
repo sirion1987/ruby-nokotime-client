@@ -101,6 +101,7 @@ This library is tested against the following Ruby implementations:
 
 * Ruby 2.4
 * Ruby 2.5
+* Ruby 2.6
 
 ## Development
 
