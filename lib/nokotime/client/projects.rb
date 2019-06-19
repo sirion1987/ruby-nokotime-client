@@ -30,7 +30,7 @@ module Nokotime
       def project_params
         return params if validation.success?
 
-        raise Errors::InvalidParams, validation.messages
+        raise InvalidParamsError, validation.messages
       end
 
       def validation

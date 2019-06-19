@@ -12,11 +12,11 @@ module Nokotime
 
       response
     rescue Faraday::ConnectionFailed => e
-      raise Errors::ConnectionFailed.new(e), e.message
+      raise ConnectionFailedError.new(e), e.message
     rescue Faraday::ResourceNotFound => e
-      raise Errors::ResourceNotFound.new(e), e.message
+      raise ResourceNotFoundError.new(e), e.message
     rescue Faraday::ClientError => e
-      raise Errors::ClientError.new(e), e.message
+      raise ClientError.new(e), e.message
     end
     # rubocop:enable Metrics/MethodLength
 
@@ -43,11 +43,11 @@ module Nokotime
 
       responses
     rescue Faraday::ConnectionFailed => e
-      raise Errors::ConnectionFailed.new(e), e.message
+      raise ConnectionFailedError.new(e), e.message
     rescue Faraday::ResourceNotFound => e
-      raise Errors::ResourceNotFound.new(e), e.message
+      raise ResourceNotFoundError.new(e), e.message
     rescue Faraday::ClientError => e
-      raise Errors::ClientError.new(e), e.message
+      raise ClientError.new(e), e.message
     end
     # rubocop:enable Metrics/MethodLength
     # rubocop:enable Metrics/AbcSize

@@ -54,7 +54,7 @@ RSpec.describe Nokotime::Connection, :vcr do
 
     it "raises a resource not found error for invalid resource" do
       expect { response }.
-        to raise_error(Nokotime::Errors::ResourceNotFound)
+        to raise_error(Nokotime::ResourceNotFoundError)
     end
 
     it "returns status code" do
@@ -72,7 +72,7 @@ RSpec.describe Nokotime::Connection, :vcr do
 
       it "raises a connection failed exception" do
         expect { response }.
-          to raise_error(Nokotime::Errors::ConnectionFailed)
+          to raise_error(Nokotime::ConnectionFailedError)
       end
     end
 
@@ -85,7 +85,7 @@ RSpec.describe Nokotime::Connection, :vcr do
 
       it "raises a client error exception" do
         expect { response }.
-          to raise_error(Nokotime::Errors::ClientError)
+          to raise_error(Nokotime::ClientError)
       end
     end
 
@@ -108,7 +108,7 @@ RSpec.describe Nokotime::Connection, :vcr do
 
     it "raises a resource not found error for invalid resource" do
       expect { parallel_response }.
-        to raise_error(Nokotime::Errors::ResourceNotFound)
+        to raise_error(Nokotime::ResourceNotFoundError)
     end
 
     it "returns status code" do
@@ -126,7 +126,7 @@ RSpec.describe Nokotime::Connection, :vcr do
 
       it "raises a connection failed exception" do
         expect { parallel_response }.
-          to raise_error(Nokotime::Errors::ConnectionFailed)
+          to raise_error(Nokotime::ConnectionFailedError)
       end
     end
 
@@ -139,7 +139,7 @@ RSpec.describe Nokotime::Connection, :vcr do
 
       it "raises a client error exception" do
         expect { parallel_response }.
-          to raise_error(Nokotime::Errors::ClientError)
+          to raise_error(Nokotime::ClientError)
       end
     end
   end

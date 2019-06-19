@@ -43,19 +43,19 @@ RSpec.describe Nokotime::Configuration do
     it "raises a configuration error for authentication type" do
       expect do
         Nokotime.configuration.auth_type
-      end.to raise_error(Nokotime::Errors::Configuration)
+      end.to raise_error(Nokotime::ConfigurationError)
     end
 
     it "raises a configuration error for max concurrency" do
       expect do
         Nokotime.configuration.max_concurrency
-      end.to raise_error(Nokotime::Errors::Configuration)
+      end.to raise_error(Nokotime::ConfigurationError)
     end
 
     it "raises a configuration error for token" do
       expect do
         Nokotime.configuration.token
-      end.to raise_error(Nokotime::Errors::Configuration)
+      end.to raise_error(Nokotime::ConfigurationError)
     end
 
     it "returns default url" do
@@ -76,7 +76,7 @@ RSpec.describe Nokotime::Configuration do
     it "raises a configuration error for authentication type" do
       expect do
         Nokotime.configuration.auth_type
-      end.to raise_error(Nokotime::Errors::Configuration)
+      end.to raise_error(Nokotime::ConfigurationError)
     end
   end
 end

@@ -4,7 +4,7 @@ RSpec.shared_examples_for "an endpoint with valid resource" do
 
     it "raises a resource not found error" do
       expect { response }.to(
-        raise_error(Nokotime::Errors::ResourceNotFound)
+        raise_error(Nokotime::ResourceNotFoundError)
       )
     end
   end

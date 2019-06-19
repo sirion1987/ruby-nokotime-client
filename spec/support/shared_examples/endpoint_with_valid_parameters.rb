@@ -4,7 +4,7 @@ RSpec.shared_examples_for "an endpoint with valid parameters" do
 
     it "raises a invalid params error" do
       expect { responses }.to(
-        raise_error(Nokotime::Errors::InvalidParams)
+        raise_error(Nokotime::InvalidParamsError)
       )
     end
   end

@@ -19,25 +19,25 @@ module Nokotime
     def auth_type
       unless valid_auth?(@auth_type)
         raise(
-          Errors::Configuration,
+          ConfigurationError,
           "#{@auth_type} isn't valid type authentication."
         )
       end
 
       @auth_type || raise(
-        Errors::Configuration, "Authentication type missing."
+        ConfigurationError, "Authentication type missing."
       )
     end
 
     def max_concurrency
       @max_concurrency || raise(
-        Errors::Configuration, "Max concurrency missing."
+        ConfigurationError, "Max concurrency missing."
       )
     end
 
     def token
       @token || raise(
-        Errors::Configuration, "Token missing."
+        ConfigurationError, "Token missing."
       )
     end
   end
